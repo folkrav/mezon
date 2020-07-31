@@ -1,0 +1,13 @@
+version: '3.7'
+
+services: 
+    frontend:
+        stdin_open: true
+        build: 
+            context: ./frontend
+            dockerfile: Dockerfile
+        
+    api:
+        build:
+            context: ./api
+            dockerfile: Dockerfile

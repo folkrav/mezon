@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mezon-api"
+version = "0.1.0"
+description = ""
+authors = ["Jean-Sébastien Beaulieu <me@jsbeaulieu.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask-restful = "^0.3.8"
+gunicorn = "^20.0.4"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.3"
+black = "^19.10b0"
+pytest = "^6.0.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

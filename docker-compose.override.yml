@@ -1,0 +1,27 @@
+version: '3.7'
+
+services: 
+    frontend:
+        build: 
+            target: development
+        ports:
+            - "${DEV_FRONTEND_PORT}:3000"
+        volumes: 
+            - ./frontend:/app
+    api:
+        build:
+            target: development
+        ports:
+            - "${DEV_API_PORT}:5000"
+        volumes: 
+            - ./api:/app    
+    database:
+        image: postgres:12.3-alpine
+        environment: 
+            POSTGRES_USER: "${DEV_POSTGRES_USER}"
+            POSTGRES_PASSWORD: "${DEV_POSTGRES_PASSWORD}"
+            POSTGRES_DB: "${DEV_POSTGRES_DB}"
+        ports:
+            - "${DEV_POSTGRES_PORT}:5432"
+        volumes: 
+            - ./data:/var/lib/postgresql/data
