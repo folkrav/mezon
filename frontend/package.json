@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.6",
@@ -15,8 +16,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint \"src/**.{js,json}\"",
+    "prettier:format": "prettier --write ./src",
+    "prettier:check": "prettier --check ./src",
+    "pre-commit": "concurrently \"yarn lint\" \"yarn prettier:check\" \"yarn test\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +41,6 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

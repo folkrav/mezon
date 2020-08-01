@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
-import App from './containers/App';
+import App from "./containers/App";
 import "./reset.css";
-
 
 const theme = {
   darkBlue: "#003249",
@@ -14,12 +13,11 @@ const theme = {
   white: "#ccdbdc",
 };
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
