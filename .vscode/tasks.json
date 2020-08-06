@@ -1,25 +1,31 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "run application",
-            "type": "shell",
-            "command": "./run",
-            "problemMatcher": []
-        },
-        {
-            "label": "run tests",
-            "type": "shell",
-            "command": "./run test",
-            "problemMatcher": []
-        },
-        {
-            "label": "run production",
-            "type": "shell",
-            "command": "./run",
-            "problemMatcher": []
-        },
-    ]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "application - run",
+      "type": "shell",
+      "command": "docker-compose up",
+      "problemMatcher": []
+    },
+    {
+      "label": "api - run tests",
+      "type": "shell",
+      "command": "docker-compose run api pytest",
+      "problemMatcher": []
+    },
+    {
+      "label": "frontend - run tests",
+      "type": "shell",
+      "command": "docker-compose run api pytest",
+      "problemMatcher": []
+    },
+    {
+      "label": "run production",
+      "type": "shell",
+      "command": "docker-compose -f docker-compose.yml -f docker-compose.production.yml up",
+      "problemMatcher": []
+    }
+  ]
 }
