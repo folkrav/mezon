@@ -5,12 +5,12 @@ import App from "./containers/App";
 import "./reset.css";
 
 const theme = {
-  darkBlue: "#003249",
-  lightBlue: "#80ced6",
-  red: "#e03616",
-  green: "#7dc95e",
-  black: "#03030d",
-  white: "#ccdbdc",
+  background: "#eeeeff",
+  foreground: "#03030d",
+  primary: "#003249",
+  warning: "#80ced6",
+  error: "#e03616",
+  success: "#7dc95e",
 };
 
 ReactDOM.render(
